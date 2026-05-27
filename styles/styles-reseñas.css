@@ -1,0 +1,297 @@
+/* ===================================================
+   PILARES GASTRONÓMICOS — styles-reseñas.css
+   Paleta: blanco puro + violeta profundo
+=================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ─── VARIABLES ─────────────────────────────────── */
+:root {
+  --violeta:        #5B2D8E;
+  --violeta-oscuro: #3A1A60;
+  --violeta-claro:  #8B5BBF;
+  --violeta-suave:  #EDE6F6;
+  --blanco:         #FFFFFF;
+  --blanco-hueso:   #FAF8FD;
+  --gris-claro:     #F3EFF9;
+  --gris-texto:     #6B6B6B;
+  --negro-suave:    #1A1020;
+  --sombra:         0 4px 24px rgba(91, 45, 142, 0.11);
+  --sombra-hover:   0 10px 36px rgba(91, 45, 142, 0.2);
+  --radio:          14px;
+  --transicion:     0.3s ease;
+}
+
+/* ─── RESET & BASE ───────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--blanco-hueso);
+  color: var(--negro-suave);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ─── HEADER ─────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 72px;
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--violeta-suave);
+  box-shadow: 0 2px 16px rgba(91, 45, 142, 0.08);
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--violeta);
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+.logo h1::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background: var(--violeta-claro);
+  border-radius: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+nav ul li a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gris-texto);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transicion);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--violeta);
+  border-radius: 2px;
+  transition: width var(--transicion);
+}
+
+nav ul li a:hover        { color: var(--violeta); }
+nav ul li a:hover::after { width: 100%; }
+
+/* Página activa */
+nav ul li a[href="resenas.html"] {
+  color: var(--violeta);
+  font-weight: 600;
+}
+nav ul li a[href="resenas.html"]::after {
+  width: 100%;
+}
+
+/* ─── SECCIÓN RESEÑAS ────────────────────────────── */
+.resenas {
+  padding: 80px 60px 96px;
+  text-align: center;
+}
+
+/* Encabezado de sección */
+.resenas h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--violeta);
+  margin-bottom: 56px;
+  position: relative;
+  display: inline-block;
+}
+
+.resenas h2::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--violeta-oscuro), var(--violeta-claro));
+  border-radius: 3px;
+}
+
+/* ─── GRID ───────────────────────────────────────── */
+.grid-resenas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ─── CARD RESEÑA ────────────────────────────────── */
+.resena {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 36px 28px 32px;
+  box-shadow: var(--sombra);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+  animation: fadeUp 0.6s ease both;
+}
+
+/* Borde superior con acento violeta */
+.resena::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--violeta-oscuro), var(--violeta-claro));
+  opacity: 0;
+  transition: opacity var(--transicion);
+}
+
+.resena:hover::before {
+  opacity: 1;
+}
+
+/* Comilla decorativa de fondo */
+.resena::after {
+  content: '"';
+  position: absolute;
+  bottom: -18px;
+  right: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 9rem;
+  color: var(--violeta-suave);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.resena:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-hover);
+}
+
+/* Escalonado de animación por tarjeta */
+.resena:nth-child(1) { animation-delay: 0.05s; }
+.resena:nth-child(2) { animation-delay: 0.12s; }
+.resena:nth-child(3) { animation-delay: 0.19s; }
+.resena:nth-child(4) { animation-delay: 0.26s; }
+.resena:nth-child(5) { animation-delay: 0.33s; }
+.resena:nth-child(6) { animation-delay: 0.40s; }
+
+/* Estrellas */
+.resena h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Texto de la reseña */
+.resena p {
+  font-size: 0.92rem;
+  color: var(--gris-texto);
+  line-height: 1.7;
+  font-style: italic;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* Nombre de la institución */
+.resena span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--violeta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer {
+  background-color: var(--negro-suave);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 28px 60px;
+  font-size: 0.82rem;
+}
+
+/* ─── ANIMACIONES ────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid-resenas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resenas {
+    padding: 64px 32px 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 24px;
+    gap: 12px;
+  }
+
+  nav ul { gap: 20px; }
+
+  .resenas {
+    padding: 48px 20px 64px;
+  }
+
+  .grid-resenas {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,299 @@
+/* ===================================================
+   PILARES GASTRONÓMICOS — styles-contacto.css
+   Paleta: blanco puro + violeta profundo
+=================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ─── VARIABLES ─────────────────────────────────── */
+:root {
+  --violeta:        #5B2D8E;
+  --violeta-oscuro: #3A1A60;
+  --violeta-claro:  #8B5BBF;
+  --violeta-suave:  #EDE6F6;
+  --blanco:         #FFFFFF;
+  --blanco-hueso:   #FAF8FD;
+  --gris-claro:     #F3EFF9;
+  --gris-texto:     #6B6B6B;
+  --negro-suave:    #1A1020;
+  --error:          #C0392B;
+  --sombra:         0 4px 24px rgba(91, 45, 142, 0.12);
+  --radio:          12px;
+  --transicion:     0.3s ease;
+}
+
+/* ─── RESET & BASE ───────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--blanco-hueso);
+  color: var(--negro-suave);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ─── HEADER ─────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 72px;
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--violeta-suave);
+  box-shadow: 0 2px 16px rgba(91, 45, 142, 0.08);
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--violeta);
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+.logo h1::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background: var(--violeta-claro);
+  border-radius: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+nav ul li a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gris-texto);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transicion);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--violeta);
+  border-radius: 2px;
+  transition: width var(--transicion);
+}
+
+nav ul li a:hover        { color: var(--violeta); }
+nav ul li a:hover::after { width: 100%; }
+
+/* Página activa */
+nav ul li a[href="contacto.html"] {
+  color: var(--violeta);
+  font-weight: 600;
+}
+nav ul li a[href="contacto.html"]::after {
+  width: 100%;
+}
+
+/* ─── SECCIÓN CONTACTO ───────────────────────────── */
+.contacto {
+  max-width: 640px;
+  margin: 80px auto;
+  padding: 60px 64px;
+  background: var(--blanco);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  animation: fadeUp 0.7s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Acento decorativo superior */
+.contacto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--violeta-oscuro), var(--violeta-claro));
+}
+
+.contacto h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--violeta);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.contacto h2::before {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--violeta-claro);
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.contacto > p {
+  font-size: 0.93rem;
+  color: var(--gris-texto);
+  margin-bottom: 40px;
+  line-height: 1.65;
+}
+
+/* ─── FORMULARIO ─────────────────────────────────── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--violeta);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 13px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  color: var(--negro-suave);
+  background-color: var(--gris-claro);
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  outline: none;
+  transition: border-color var(--transicion), background-color var(--transicion), box-shadow var(--transicion);
+  resize: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #b0a8c0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--violeta);
+  background-color: var(--blanco);
+  box-shadow: 0 0 0 4px rgba(91, 45, 142, 0.1);
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--error);
+}
+
+textarea {
+  line-height: 1.6;
+  min-height: 140px;
+}
+
+/* ─── BOTÓN ──────────────────────────────────────── */
+button[type="submit"] {
+  align-self: flex-start;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, var(--violeta-oscuro), var(--violeta));
+  color: var(--blanco);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform var(--transicion), box-shadow var(--transicion), opacity var(--transicion);
+  box-shadow: 0 4px 18px rgba(91, 45, 142, 0.35);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(91, 45, 142, 0.45);
+  opacity: 0.93;
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(91, 45, 142, 0.3);
+}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer {
+  background-color: var(--negro-suave);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 28px 60px;
+  font-size: 0.82rem;
+}
+
+/* ─── ANIMACIONES ────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 24px;
+    gap: 12px;
+  }
+
+  nav ul { gap: 20px; }
+
+  .contacto {
+    margin: 40px 20px;
+    padding: 40px 28px;
+  }
+
+  button[type="submit"] {
+    align-self: stretch;
+    text-align: center;
+  }
+}
