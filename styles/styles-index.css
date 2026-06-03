@@ -1,31 +1,27 @@
-/* ===================================================
-   PILARES GASTRONÓMICOS — styles-index.css
-   Paleta: blanco puro + violeta profundo
-   Estética: editorial refinada con toques cálidos
-=================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
 
 /* ─── VARIABLES ─────────────────────────────────── */
 :root {
-  --violeta:        #5B2D8E;
+  --violeta: #5B2D8E;
   --violeta-oscuro: #3A1A60;
-  --violeta-claro:  #8B5BBF;
-  --violeta-suave:  #EDE6F6;
-  --violeta-hover:  #7340B0;
-  --blanco:         #FFFFFF;
-  --blanco-hueso:   #FAF8FD;
-  --gris-claro:     #F3EFF9;
-  --gris-texto:     #6B6B6B;
-  --negro-suave:    #1A1020;
-  --sombra:         0 4px 24px rgba(91, 45, 142, 0.12);
-  --sombra-hover:   0 8px 36px rgba(91, 45, 142, 0.22);
-  --radio:          12px;
-  --transicion:     0.3s ease;
+  --violeta-claro: #8B5BBF;
+  --violeta-suave: #EDE6F6;
+  --violeta-hover: #7340B0;
+  --blanco: #FFFFFF;
+  --blanco-hueso: #FAF8FD;
+  --gris-claro: #F3EFF9;
+  --gris-texto: #6B6B6B;
+  --negro-suave: #1A1020;
+  --sombra: 0 4px 24px rgba(91, 45, 142, 0.12);
+  --sombra-hover: 0 8px 36px rgba(91, 45, 142, 0.22);
+  --radio: 12px;
+  --transicion: 0.3s ease;
 }
 
 /* ─── RESET & BASE ───────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -67,6 +63,10 @@ header {
   background-color: var(--blanco);
   border-bottom: 2px solid var(--violeta-suave);
   box-shadow: 0 2px 16px rgba(91, 45, 142, 0.08);
+}
+
+.logoimg {
+  justify-content: left;
 }
 
 .logo h1 {
@@ -138,12 +138,10 @@ nav ul li a:hover::after {
   padding: 80px 60px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       var(--violeta-oscuro) 0%,
       var(--violeta) 50%,
-      var(--violeta-claro) 100%
-    );
+      var(--violeta-claro) 100%);
 
   position: relative;
   overflow: hidden;
@@ -158,7 +156,7 @@ nav ul li a:hover::after {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .hero::after {
@@ -169,7 +167,7 @@ nav ul li a:hover::after {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hero-contenido {
@@ -192,7 +190,7 @@ nav ul li a:hover::after {
 .hero-contenido p {
   font-size: 1.05rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 40px;
   max-width: 500px;
 }
@@ -213,7 +211,7 @@ nav ul li a:hover::after {
   object-fit: cover;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.25);
+    0 20px 60px rgba(0, 0, 0, 0.25);
 
   transition:
     transform 0.4s ease,
@@ -223,7 +221,7 @@ nav ul li a:hover::after {
 .hero-imagen img:hover {
   transform: scale(1.02);
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.30);
+    0 25px 70px rgba(0, 0, 0, 0.30);
 }
 
 .boton {
@@ -242,7 +240,7 @@ nav ul li a:hover::after {
     color var(--transicion),
     box-shadow var(--transicion),
     transform var(--transicion);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .boton:hover {
@@ -250,7 +248,7 @@ nav ul li a:hover::after {
   color: var(--blanco);
   border-color: var(--blanco);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
 /* ─── NOSOTROS ───────────────────────────────────── */
@@ -422,7 +420,7 @@ nav ul li a:hover::after {
 }
 
 .beneficio {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(236, 140, 245, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radio);
   padding: 40px 28px;
@@ -433,6 +431,10 @@ nav ul li a:hover::after {
 .beneficio:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-4px);
+}
+
+.beneficio:hover .icono-beneficio {
+  transform: scale(1.08);
 }
 
 .beneficio h3 {
@@ -448,6 +450,21 @@ nav ul li a:hover::after {
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
+  color: var(--gris-texto);
+}
+
+
+.icono-beneficio {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+
+  margin: 0 auto 22px;
+
+  display: block;
+
+  transition: transform 0.3s ease;
 }
 
 /* ─── FOOTER ─────────────────────────────────────── */
@@ -466,6 +483,7 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -474,6 +492,7 @@ footer {
 
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 1024px) {
+
   header,
   .nosotros,
   .servicios,
