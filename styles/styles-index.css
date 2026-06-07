@@ -375,26 +375,7 @@ nav ul li a:hover::after {
   line-height: 1.6;
 }
 
-/* ─── VIDEO ──────────────────────────────────────── */
-.video {
-  padding: 96px 60px;
-  background-color: var(--blanco);
-  text-align: center;
-}
 
-.video h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--violeta);
-  margin-bottom: 40px;
-}
-
-.video iframe {
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  max-width: 100%;
-}
 
 /* ─── BENEFICIOS ─────────────────────────────────── */
 .beneficios {
@@ -416,7 +397,7 @@ nav ul li a:hover::after {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 140px auto 0;
 }
 
 .beneficio {
@@ -426,6 +407,7 @@ nav ul li a:hover::after {
   padding: 40px 28px;
   backdrop-filter: blur(8px);
   transition: background var(--transicion), transform var(--transicion);
+  margin-bottom: 140px;
 }
 
 .beneficio:hover {
@@ -441,7 +423,7 @@ nav ul li a:hover::after {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--blanco);
+  color: var(--violeta);
   margin-bottom: 12px;
   letter-spacing: 0.02em;
 }
