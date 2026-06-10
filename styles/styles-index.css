@@ -390,75 +390,154 @@ nav ul li a:hover::after {
 
 
 /* ─── BENEFICIOS ─────────────────────────────────── */
-.beneficios {
-  padding: 96px 60px;
-  background: linear-gradient(135deg, var(--violeta-oscuro), var(--violeta));
-  text-align: center;
+
+.beneficios-section {
+  position: relative;
+
+  padding: 120px 0;
+
+  background-image: url("https://dghqs88jwcgws.cloudfront.net/wp-content/uploads/2025/05/cocinero_o_cocinera_1024x600.webp?x30843");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
-.beneficios h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--blanco);
-  margin-bottom: 56px;
+/* Capa oscura + desenfoque */
+.beneficios-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(57, 30, 86, 0.78),
+      rgba(57, 30, 86, 0.78)
+    );
+
+  backdrop-filter: blur(2px);
 }
 
 .beneficios-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 0 60px;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 900px;
-  margin: 140px auto 0;
+
+  gap: 40px;
 }
 
 .beneficio {
-  background: rgba(236, 140, 245, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radio);
-  padding: 40px 28px;
+  background: rgba(255, 255, 255, 0.92);
+
+  border-radius: 24px;
+
+  padding: 50px 35px;
+
+  text-align: center;
+
   backdrop-filter: blur(8px);
-  transition: background var(--transicion), transform var(--transicion);
-  margin-bottom: 140px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.beneficio::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violeta),
+      var(--violeta-claro)
+    );
 }
 
 .beneficio:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-4px);
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.25);
+}
+
+.icono-beneficio {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 0 auto 25px;
+
+  transition: transform 0.3s ease;
 }
 
 .beneficio:hover .icono-beneficio {
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
 
 .beneficio h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
+
+  font-size: 1.8rem;
+
   color: var(--violeta);
-  margin-bottom: 12px;
-  letter-spacing: 0.02em;
+
+  margin-bottom: 15px;
 }
 
 .beneficio p {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
+  font-size: 1rem;
+
   color: var(--gris-texto);
+
+  line-height: 1.8;
+
+  max-width: 260px;
+
+  margin: 0 auto;
 }
 
+/* RESPONSIVE */
 
-.icono-beneficio {
-  width: 60px;
-  height: 60px;
+@media (max-width: 900px) {
 
-  object-fit: contain;
+  .beneficios-container {
+    grid-template-columns: 1fr;
 
-  margin: 0 auto 22px;
+    gap: 25px;
 
-  display: block;
+    padding: 0 25px;
+  }
 
-  transition: transform 0.3s ease;
+  .beneficios-section {
+    padding: 80px 0;
+  }
+
 }
 
 /* ─── FOOTER ─────────────────────────────────────── */
