@@ -348,7 +348,7 @@ nav ul li a:hover::after {
 }
 
 .card {
-  background: var(--blanco);
+  background: #dab7ff;
   border-radius: var(--radio);
   overflow: hidden;
   box-shadow: var(--sombra);
@@ -376,7 +376,7 @@ nav ul li a:hover::after {
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--violeta);
+  color: var(--negro-suave);
   padding: 20px 24px 8px;
 }
 
